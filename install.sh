@@ -4,8 +4,9 @@
 #
 # Installs:
 #   1. Familiar (always-on AI companion + self-improving models)
-#   2. OpenCode (terminal coding agent) — wired to Familiar
-#   3. Ollama models (local, private)
+#   2. Claude Code CLI check (primary coding agent — requires Anthropic subscription)
+#   3. OpenCode (backup coding agent, wired to Familiar for offline/local use)
+#   4. Ollama models (optional, local fallback)
 #
 # Requirements: macOS or Linux, git
 
