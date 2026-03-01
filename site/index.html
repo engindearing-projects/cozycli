@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Familiar &mdash; AI That Knows You</title>
-  <meta name="description" content="Familiar is an open-source AI companion that learns from everything you do. It installs alongside OpenCode, trains local models on your sessions, and gets smarter over time. Private, self-improving, yours.">
-  <meta property="og:title" content="Familiar &mdash; AI That Knows You">
-  <meta property="og:description" content="Self-improving AI companion. Local models, private data, automatic training. Learns things you didn't teach it.">
+  <title>Familiar &mdash; A Personal AI That Lives on Your Machine</title>
+  <meta name="description" content="Familiar is an open-source AI that runs locally, trains custom models on your workflow, and works autonomously while you sleep. Migrate from ChatGPT in one command.">
+  <meta property="og:title" content="Familiar &mdash; A Personal AI That Lives on Your Machine">
+  <meta property="og:description" content="Local-first AI companion. Trains on your workflow, runs Claude Code or Gemini for agentic coding, and gets smarter every day. Open source, MIT licensed.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://familiar.run">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,6 +47,9 @@
       padding: 0 24px;
     }
 
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
     /* Nav */
     nav {
       padding: 20px 0;
@@ -71,8 +74,6 @@
       color: var(--accent);
       text-decoration: none;
     }
-
-    .logo span { color: var(--text-dim); font-weight: 400; }
 
     nav .links {
       display: flex;
@@ -102,7 +103,7 @@
       transition: border-color 0.2s;
     }
 
-    .gh-btn:hover { border-color: var(--accent); }
+    .gh-btn:hover { border-color: var(--accent); text-decoration: none; }
     .gh-btn svg { width: 18px; height: 18px; fill: var(--text); }
 
     /* Hero */
@@ -195,7 +196,7 @@
       border-radius: 12px;
       padding: 14px 24px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       cursor: pointer;
       transition: all 0.2s;
       position: relative;
@@ -411,6 +412,100 @@
     }
 
     /* Sections */
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 1rem;
+      margin-bottom: 48px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Migration callout */
+    .migration {
+      padding: 60px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .migration h2 {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
+
+    .migration h2 .highlight {
+      background: linear-gradient(135deg, var(--accent), var(--highlight));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .migration p {
+      font-size: 1rem;
+      color: var(--text-dim);
+      max-width: 680px;
+      margin: 0 auto 12px;
+    }
+
+    .migration .emphasis { color: var(--text); font-weight: 600; }
+
+    .migration-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 800px;
+      margin: 32px auto 0;
+    }
+
+    .migration-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .migration-step .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--accent-glow);
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+    }
+
+    .migration-step h4 { font-size: 0.95rem; margin-bottom: 6px; }
+    .migration-step p { font-size: 0.82rem; color: var(--text-dim); margin: 0; }
+
+    .migration-link {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 10px 24px;
+      background: var(--accent);
+      color: var(--bg);
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .migration-link:hover { background: var(--highlight); text-decoration: none; }
+
+    /* Moat comparison */
     .moat-callout {
       padding: 60px 0;
       border-top: 1px solid var(--border);
@@ -475,19 +570,6 @@
     .architecture {
       padding: 80px 0;
       border-top: 1px solid var(--border);
-    }
-
-    .architecture h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 12px;
-    }
-
-    .architecture .subtitle {
-      text-align: center;
-      color: var(--text-dim);
-      font-size: 1rem;
-      margin-bottom: 48px;
     }
 
     .arch-diagram {
@@ -567,6 +649,7 @@
     .tag-green { background: var(--green-dim); color: var(--green); }
     .tag-purple { background: rgba(184, 169, 201, 0.15); color: var(--purple); }
     .tag-cyan { background: rgba(126, 200, 200, 0.15); color: var(--cyan); }
+    .tag-accent { background: var(--accent-glow); color: var(--accent); }
 
     .arch-interface p {
       font-size: 0.82rem;
@@ -591,19 +674,6 @@
     .features {
       padding: 80px 0;
       border-top: 1px solid var(--border);
-    }
-
-    .features h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 12px;
-    }
-
-    .features .subtitle {
-      text-align: center;
-      color: var(--text-dim);
-      font-size: 1rem;
-      margin-bottom: 48px;
     }
 
     .feature-grid {
@@ -642,26 +712,26 @@
       color: var(--highlight);
     }
 
+    .feature-card .cost-tag {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    .cost-free { background: var(--green-dim); color: var(--green); }
+    .cost-paid { background: var(--accent-glow); color: var(--accent); }
+
     /* Forge */
     .forge {
       padding: 80px 0;
       border-top: 1px solid var(--border);
-    }
-
-    .forge h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 12px;
-    }
-
-    .forge .subtitle {
-      text-align: center;
-      color: var(--text-dim);
-      font-size: 1rem;
-      margin-bottom: 48px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     .forge-flow {
@@ -715,12 +785,6 @@
     .how-it-works {
       padding: 80px 0;
       border-top: 1px solid var(--border);
-    }
-
-    .how-it-works h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 48px;
     }
 
     .steps {
@@ -833,15 +897,15 @@
     .terminal-window.anim-playing .tool-call:nth-child(3) { animation: fadeIn 0.4s ease 2.6s forwards; }
     .terminal-window.anim-playing .chat-bubble.assistant { animation: fadeIn 0.6s ease 3.2s forwards; }
 
-    .feature-card, .forge-step, .arch-interface {
+    .feature-card, .forge-step, .arch-interface, .migration-step {
       opacity: 0;
       transform: translateY(24px);
     }
-    .feature-card.visible, .forge-step.visible, .arch-interface.visible {
+    .feature-card.visible, .forge-step.visible, .arch-interface.visible, .migration-step.visible {
       animation: fadeInUp 0.5s ease forwards;
     }
-    .feature-card:nth-child(2).visible { animation-delay: 0.1s; }
-    .feature-card:nth-child(3).visible { animation-delay: 0.2s; }
+    .feature-card:nth-child(2).visible, .migration-step:nth-child(2).visible { animation-delay: 0.1s; }
+    .feature-card:nth-child(3).visible, .migration-step:nth-child(3).visible { animation-delay: 0.2s; }
     .feature-card:nth-child(4).visible { animation-delay: 0.3s; }
     .feature-card:nth-child(5).visible { animation-delay: 0.4s; }
     .feature-card:nth-child(6).visible { animation-delay: 0.5s; }
@@ -849,8 +913,9 @@
     @media (max-width: 768px) {
       .arch-diagram { grid-template-columns: 1fr; }
       .moat-compare { grid-template-columns: 1fr; }
+      .migration-steps { grid-template-columns: 1fr; }
       .steps { grid-template-columns: repeat(2, 1fr); }
-      .install-cmd { font-size: 0.75rem; padding: 12px 16px; }
+      .install-cmd { font-size: 0.72rem; padding: 12px 16px; }
       .forge-flow { flex-direction: column; }
       .forge-arrow { transform: rotate(90deg); }
     }
@@ -866,11 +931,11 @@
   <div class="container">
     <a href="/" class="logo">familiar</a>
     <div class="links">
-      <a href="#architecture">How it works</a>
       <a href="#features">Features</a>
+      <a href="#architecture">Architecture</a>
       <a href="#forge">Forge</a>
       <a href="#install">Install</a>
-      <a href="https://github.com/engindearing-projects/cozyterm" class="gh-btn" target="_blank">
+      <a href="https://github.com/engindearing-projects/engie" class="gh-btn" target="_blank">
         <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
         GitHub
       </a>
@@ -880,30 +945,36 @@
 
 <section class="hero">
   <div class="container">
-    <img src="familiar-logo.png" alt="Familiar — ASCII wolf with glowing eyes" class="hero-logo">
-    <div class="hero-badge">Open Source &middot; MIT &middot; Runs 100% locally</div>
-    <h1>AI that <span class="highlight">learns things<br>you didn't teach it</span></h1>
-    <p class="tagline">Familiar is an AI companion that lives on your machine. It installs alongside <a href="https://opencode.ai" target="_blank" style="color:var(--cyan);text-decoration:none">OpenCode</a>, trains local models on every session, and develops knowledge you never explicitly gave it.</p>
-    <p class="moat">The more you use it, the more it knows. Your data never leaves your machine.</p>
+    <img src="familiar-logo.png" alt="Familiar" class="hero-logo">
+    <div class="hero-badge">Open Source &middot; MIT &middot; Runs on Your Machine</div>
+    <h1>A personal AI that <span class="highlight">learns<br>your workflow</span></h1>
+    <p class="tagline">Familiar lives on your machine, trains custom models on your patterns, and works autonomously while you sleep. It handles ChatGPT migration, sets up Claude, and gets smarter every day.</p>
+    <p class="moat">Your data never leaves your machine. Your models improve for you alone.</p>
 
     <div class="stack-tags">
-      <span class="stack-tag">OpenCode</span>
+      <span class="stack-tag">Claude Code</span>
       <span class="stack-tag">Ollama</span>
       <span class="stack-tag">Forge&trade;</span>
-      <span class="stack-tag">MCP</span>
+      <span class="stack-tag">Hands</span>
       <span class="stack-tag">Bun</span>
       <span class="stack-tag">TypeScript</span>
     </div>
 
     <div id="install" class="install-box">
-      <div class="install-cmd" onclick="copyInstall(this, 'curl -fsSL https://familiar.run/install.sh | bash')">
+      <div class="install-cmd" onclick="copyInstall(this, 'brew tap engindearing-projects/tap && brew install familiar')">
         <span class="tooltip">Copied!</span>
         <span class="prompt">$</span>
-        <span class="cmd">curl -fsSL familiar.run/install.sh | bash</span>
+        <span class="cmd">brew tap engindearing-projects/tap && brew install familiar</span>
         <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
       </div>
+      <div class="install-cmd" onclick="copyInstall(this, 'npx familiar-setup')" style="padding:10px 20px;font-size:0.8rem;">
+        <span class="tooltip">Copied!</span>
+        <span class="prompt">$</span>
+        <span class="cmd">npx familiar-setup</span>
+        <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+      </div>
     </div>
-    <p class="install-note">Installs Familiar + <a href="https://opencode.ai" target="_blank">OpenCode</a> + Ollama models &middot; macOS / Linux</p>
+    <p class="install-note">macOS &middot; Linux &middot; Requires git &middot; <a href="https://quitgpt.ai">Switching from ChatGPT?</a></p>
   </div>
 </section>
 
@@ -914,39 +985,39 @@
         <div class="terminal-dot red"></div>
         <div class="terminal-dot yellow"></div>
         <div class="terminal-dot green"></div>
-        <div class="terminal-title">opencode &mdash; ~/my-project &mdash; powered by familiar</div>
+        <div class="terminal-title">familiar &mdash; ~/my-project</div>
       </div>
       <div class="terminal-body">
         <div class="term-banner">
-          opencode <span class="version">v1.2</span> &middot; familiar/qwen2.5:7b-instruct
-          <span class="context-line">MCP: familiar (14 tools) &middot; LSP: typescript &middot; Forge: 47 pairs today</span>
+          familiar <span class="version">v1.0</span> &middot; familiar-coder:v16
+          <span class="context-line">Brain: 154 RAG chunks &middot; Forge: 5,170 training pairs &middot; Hands: 4 active</span>
         </div>
         <div class="term-chat">
           <div class="chat-bubble user">
             <div class="chat-role">you &gt;</div>
-            <div class="chat-text">the login form doesn't validate email format, can you fix it?</div>
+            <div class="chat-text">the payment flow has a race condition, can you investigate and fix it?</div>
           </div>
           <div class="tool-call">
-            <span class="tool-name">[glob]</span> src/components/Login*.tsx
+            <span class="tool-name">[search]</span> "payment" "checkout" "race" in src/
           </div>
           <div class="tool-call">
-            <span class="tool-name">[read]</span> src/components/LoginForm.tsx
+            <span class="tool-name">[read]</span> src/services/PaymentService.ts
           </div>
           <div class="tool-call">
-            <span class="tool-name">[edit]</span> src/components/LoginForm.tsx +42
+            <span class="tool-name">[edit]</span> src/services/PaymentService.ts +87 &mdash; added mutex lock around checkout
           </div>
           <div class="chat-bubble assistant">
             <div class="chat-role">familiar</div>
             <div class="chat-text">
-              Added email validation to <code>LoginForm.tsx</code>. The <code>handleSubmit</code> function now checks format before calling the API. LSP confirms zero errors. <em style="color:var(--text-dim)">(session logged to Forge)</em>
+              Found the race condition in <code>PaymentService.ts</code>. Two concurrent <code>processCheckout()</code> calls could debit the same balance. Added a mutex lock around the critical section. Tests pass. <em style="color:var(--text-dim)">(session logged to Forge)</em>
             </div>
           </div>
         </div>
         <div class="term-status-bar">
           <span><span class="dot on"></span>familiar</span>
-          <span class="model-tag">model: qwen2.5:7b</span>
-          <span class="model-tag">forge: training</span>
-          <span class="session">turn 1 &middot; 847 tokens</span>
+          <span class="model-tag">agentic: claude</span>
+          <span class="model-tag">forge: 5,170 pairs</span>
+          <span class="session">turn 1 &middot; 1,247 tokens</span>
         </div>
         <div class="term-input">
           <span class="prompt-sign">&gt;</span>
@@ -958,31 +1029,58 @@
   </div>
 </section>
 
+<section class="migration">
+  <div class="container">
+    <h2>Switching from <span class="highlight">ChatGPT</span>?</h2>
+    <p>Familiar automates the entire migration. Export your ChatGPT data, install Familiar, and it handles the rest &mdash; <span class="emphasis">importing your conversations, extracting your preferences, and setting up Claude with your full context.</span></p>
+
+    <div class="migration-steps">
+      <div class="migration-step">
+        <div class="num">1</div>
+        <h4>Export from ChatGPT</h4>
+        <p>Settings &rarr; Data controls &rarr; Export. You'll get a ZIP via email in minutes.</p>
+      </div>
+      <div class="migration-step">
+        <div class="num">2</div>
+        <h4>Install Familiar</h4>
+        <p>One command. The setup wizard walks you through everything.</p>
+      </div>
+      <div class="migration-step">
+        <div class="num">3</div>
+        <h4>Drop your export</h4>
+        <p>Familiar ingests it, builds your knowledge base, and starts learning immediately.</p>
+      </div>
+    </div>
+
+    <a href="https://quitgpt.ai" class="migration-link">Step-by-step guide at quitgpt.ai &rarr;</a>
+  </div>
+</section>
+
 <section class="moat-callout">
   <div class="container">
-    <h2>The only AI that <span class="highlight">learns from you</span></h2>
-    <p>Other AI tools ship a frozen model. You use it, they get your data, the model never changes. <span class="emphasis">Familiar is different.</span></p>
-    <p>The Forge&trade; pipeline captures every session as training data, fine-tunes your local models, and deploys them back &mdash; automatically. The more you work, the more it understands. Not just code &mdash; your patterns, your decisions, your thinking. <span class="emphasis">Your data stays on your machine. Your models improve for you.</span></p>
+    <h2>The only AI that <span class="highlight">gets smarter for you</span></h2>
+    <p>Cloud AI tools ship a frozen model. You use it, they collect your data, the model never changes for you. <span class="emphasis">Familiar is different.</span></p>
+    <p>The Forge pipeline captures every session as training data, fine-tunes custom local models, and deploys them back &mdash; automatically. The more you work, the more it understands your patterns, your decisions, your thinking. <span class="emphasis">Your data stays on your machine. Your models improve for you alone.</span></p>
 
     <div class="moat-compare">
       <div class="moat-col them">
-        <h4>Other tools</h4>
+        <h4>Cloud AI</h4>
         <ul>
           <li>Static models, same for everyone</li>
-          <li>Cloud API dependency</li>
           <li>Your data sent to third parties</li>
-          <li>Generic, one-size-fits-all</li>
+          <li>Sycophantic &mdash; agrees with you to keep you happy</li>
           <li>No memory between sessions</li>
+          <li>Generic, one-size-fits-all</li>
         </ul>
       </div>
       <div class="moat-col us">
         <h4>Familiar</h4>
         <ul>
           <li>Models that learn your patterns</li>
-          <li>Runs 100% locally via Ollama</li>
           <li>Your data never leaves your machine</li>
-          <li>Adapts to your style and thinking</li>
-          <li>Persistent memory across all platforms</li>
+          <li>Claude &mdash; honest, direct, corrects you when you're wrong</li>
+          <li>Persistent memory + RAG knowledge base</li>
+          <li>Adapts to your style and codebase</li>
         </ul>
       </div>
     </div>
@@ -991,71 +1089,71 @@
 
 <section class="architecture" id="architecture">
   <div class="container">
-    <h2>How Familiar works</h2>
-    <p class="subtitle">Familiar is the brain. OpenCode is the hands. Together they form a self-improving system that runs entirely on your machine.</p>
+    <h2 class="section-title">How Familiar works</h2>
+    <p class="section-subtitle">A self-improving system that runs entirely on your machine. Cloud APIs for heavy lifting, local models for everything else.</p>
 
     <div class="arch-diagram">
       <div class="arch-brain">
-        <h3>Familiar</h3>
-        <p>Always-on AI companion that remembers everything, trains on every session, and develops knowledge you didn't give it.</p>
+        <h3>The Brain</h3>
+        <p>Always-on AI companion. Remembers everything, learns from every session, develops knowledge you didn't give it.</p>
         <div class="brain-features">
-          <div><span>~</span> Persistent memory (SQLite + FTS5)</div>
+          <div><span>~</span> RAG knowledge base (SQLite + embeddings)</div>
           <div><span>~</span> Multi-model routing</div>
           <div><span>~</span> Forge training pipeline</div>
-          <div><span>~</span> Activity sync across platforms</div>
-          <div><span>~</span> Autonomous background agents</div>
-          <div><span>~</span> Scheduled tasks (cron)</div>
+          <div><span>~</span> Hands autonomous system</div>
+          <div><span>~</span> Learnable skill modules</div>
+          <div><span>~</span> CRAAP source evaluator</div>
         </div>
       </div>
 
       <div class="arch-interfaces">
         <div class="arch-interface">
-          <h4>OpenCode <span class="tag tag-green">coding</span></h4>
-          <p>Terminal coding agent by the Charm team. Familiar installs it, configures your local models as the provider, and connects via MCP so every tool call, file edit, and session feeds back into the brain.</p>
+          <h4>Claude Code <span class="tag tag-green">agentic</span></h4>
+          <p>Subscription-based agentic coding ($20/mo, 1-week free trial). Reads your files, writes code, runs tests, iterates. Falls back to free Gemini Flash if you don't subscribe.</p>
         </div>
         <div class="arch-interface">
-          <h4>Telegram / Slack <span class="tag tag-purple">channels</span></h4>
-          <p>Get notifications, morning briefs, PR summaries, and training reports. Ask Familiar questions from your phone. All conversations feed back into model training.</p>
+          <h4>Ollama <span class="tag tag-accent">local</span></h4>
+          <p>Local language models that run on your hardware. Handles fast chat, routing, classification, and embeddings with zero cloud dependency. Works offline.</p>
         </div>
         <div class="arch-interface">
-          <h4>MCP Bridge <span class="tag tag-cyan">14 tools</span></h4>
-          <p>Familiar exposes 14 MCP tools: memory search, observations, system status, smart routing, and more. Any MCP-compatible client can connect to the brain.</p>
+          <h4>MCP + Channels <span class="tag tag-cyan">69 tools</span></h4>
+          <p>Rust daemon exposes 69 MCP tools: memory, filesystem, code analysis, HTTP, and more. Connect via CLI, Telegram, Slack, or any MCP-compatible client.</p>
         </div>
       </div>
     </div>
 
-    <p class="arch-note">All models run locally via <a href="https://ollama.com" target="_blank" style="color:var(--accent);text-decoration:none">Ollama</a>. Swap models in <code>opencode.json</code>. Falls back to cloud APIs when local models are unavailable.</p>
+    <p class="arch-note">All local models run via <a href="https://ollama.com" target="_blank" style="color:var(--accent);text-decoration:none">Ollama</a>. Cloud APIs (Claude, Gemini) used only for agentic coding and research phases.</p>
   </div>
 </section>
 
 <section class="features" id="features">
   <div class="container">
-    <h2>What you get</h2>
-    <p class="subtitle">One install. A companion that grows with you.</p>
+    <h2 class="section-title">What you get</h2>
+    <p class="section-subtitle">One install command. A personal AI that grows with you.</p>
     <div class="feature-grid">
       <div class="feature-card">
-        <h3>OpenCode integration</h3>
-        <p>The installer sets up OpenCode with your local Ollama models as the provider and Familiar as an MCP server. OpenCode handles the coding; Familiar handles the learning.</p>
+        <h3>Agentic coding <span class="cost-tag cost-paid">$20/mo</span></h3>
+        <p>Claude Code reads your files, writes code, runs tests, and iterates until it's right. One-week free trial. Or fall back to free Gemini Flash &mdash; slower but no subscription needed.</p>
       </div>
       <div class="feature-card">
-        <h3>Self-improving models</h3>
-        <p>Every session generates training data. Forge fine-tunes your local models and deploys better versions. Version 1 was generic. Version 15 knows how you think.</p>
+        <h3>Self-improving models <span class="cost-tag cost-free">free</span></h3>
+        <p>Forge captures every session as training data and fine-tunes local models on your GPU (or CPU). Version 1 was generic. Version 16 knows how you think.</p>
       </div>
       <div class="feature-card">
-        <h3>Persistent memory</h3>
-        <p>SQLite + full-text search. Familiar remembers your decisions, blockers, preferences, and context. Search across sessions with <code>familiar_memory_search</code>.</p>
+        <h3>Brain &amp; RAG <span class="cost-tag cost-free">free</span></h3>
+        <p>SQLite knowledge base with semantic embeddings, knowledge graph, and CRAAP source evaluation. Familiar builds context from your code, docs, and conversations.</p>
       </div>
       <div class="feature-card">
-        <h3>Cross-platform sync</h3>
-        <p>Code in OpenCode, check in from Telegram, review on Slack. All activity syncs through the brain. One unified timeline of everything you're doing.</p>
+        <h3>Hands &mdash; autonomous agents <span class="cost-tag cost-free">free</span></h3>
+        <p>Scheduled tasks that run while you sleep. The researcher mines knowledge, the trainer builds models, the coder writes and tests code. Cron-driven, event-triggered, multi-phase.</p>
       </div>
       <div class="feature-card">
-        <h3>14 MCP tools</h3>
-        <p>Memory search, observations, chat routing, system status, session management, and more. Any MCP client connects to the full brain. Not just OpenCode.</p>
+        <h3>69 MCP tools <span class="cost-tag cost-free">free</span></h3>
+        <p>Rust daemon with memory search, filesystem operations, code analysis, HTTP requests, system management, and more. Any MCP client connects to the full brain.</p>
       </div>
       <div class="feature-card">
-        <h3>100% private</h3>
-        <p>Models run on your machine via Ollama. Training happens locally. No data leaves your network. No API keys required for local operation. Your companion, your data.</p>
+        <h3>100% private <span class="cost-tag cost-free">free</span></h3>
+        <p>Local models run on your machine via Ollama. Training happens locally. Your data stays on your network. Cloud APIs only used when you choose agentic mode.</p>
       </div>
     </div>
   </div>
@@ -1063,8 +1161,8 @@
 
 <section class="forge" id="forge">
   <div class="container">
-    <h2>Forge&trade;: the training loop</h2>
-    <p class="subtitle">This is what makes Familiar alive. Every session feeds the pipeline. Your models develop understanding you never explicitly taught them.</p>
+    <h2 class="section-title">Forge: the training loop</h2>
+    <p class="section-subtitle">This is what makes Familiar alive. Every session feeds the pipeline. Your models develop understanding you never explicitly taught them.</p>
     <div class="forge-flow">
       <div class="forge-step">
         <div class="label">Collect</div>
@@ -1078,7 +1176,7 @@
       <span class="forge-arrow">&rarr;</span>
       <div class="forge-step">
         <div class="label">Train</div>
-        <div class="desc">Fine-tune with LoRA on your GPU</div>
+        <div class="desc">Fine-tune with LoRA on your GPU or CPU</div>
       </div>
       <span class="forge-arrow">&rarr;</span>
       <div class="forge-step">
@@ -1091,31 +1189,31 @@
         <div class="desc">Benchmark against previous versions</div>
       </div>
     </div>
-    <p class="forge-note">Manage with <code>familiar forge status</code>, <code>familiar forge train</code>, <code>familiar forge eval</code>, <code>familiar forge rollback</code></p>
+    <p class="forge-note">Runs nightly at 2 AM, or on-demand: <code>familiar forge status</code>, <code>familiar forge train</code>, <code>familiar forge eval</code></p>
   </div>
 </section>
 
 <section class="how-it-works">
   <div class="container">
-    <h2>Get started in 3 steps</h2>
+    <h2 class="section-title">Get started in 3 steps</h2>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
         <h3>Install</h3>
-        <p>One command installs Familiar, OpenCode, and wires them together. Pulls recommended Ollama models automatically.</p>
-        <code class="step-cmd">curl -fsSL familiar.run/install.sh | bash</code>
+        <p>One command installs Familiar, pulls Ollama models, and wires everything together. The setup wizard handles configuration.</p>
+        <code class="step-cmd">brew tap engindearing-projects/tap && brew install familiar</code>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <h3>Use it</h3>
-        <p>Open any project and run <code>opencode</code>. It's already configured with your local models and connected to Familiar.</p>
-        <code class="step-cmd">cd my-project && opencode</code>
+        <h3>Initialize</h3>
+        <p>Run <code>familiar init</code> to configure your AI, API keys, channels, and services. Drop a ChatGPT export if you're migrating.</p>
+        <code class="step-cmd">familiar init</code>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <h3>Watch it learn</h3>
-        <p>After a few sessions, run Forge to train. Your models improve. Keep working. Keep training. It never stops learning.</p>
-        <code class="step-cmd">familiar forge train</code>
+        <h3>Start chatting</h3>
+        <p>Just type <code>familiar</code>. It's already connected to your brain, knowledge base, and models. It starts learning from day one.</p>
+        <code class="step-cmd">familiar</code>
       </div>
     </div>
   </div>
@@ -1123,7 +1221,7 @@
 
 <section class="built-from-scratch">
   <div class="container">
-    <p><strong>Familiar is built from scratch.</strong> No LangChain, no AutoGen, no third-party agent frameworks. The training pipeline, memory system, activity sync, MCP bridge, and model serving layer are all original code by <a href="https://engindearing.soy" target="_blank" style="color:var(--accent)">engindearing</a>. OpenCode handles the coding TUI because it's already the best terminal agent out there. We focus on making your AI smarter.</p>
+    <p><strong>Built from scratch.</strong> No LangChain, no AutoGen, no third-party agent frameworks. The training pipeline, RAG system, autonomous hands, skill modules, MCP bridge, and model serving layer are all original code by <a href="https://engindearing.soy" target="_blank" style="color:var(--accent)">engindearing</a>. We use Claude Code and Ollama because they're the best at what they do. We focus on making your AI smarter.</p>
   </div>
 </section>
 
@@ -1131,11 +1229,11 @@
   <div class="container">
     <p>
       Built by <a href="https://engindearing.soy" target="_blank">engindearing</a> &bull;
-      <a href="https://github.com/engindearing-projects/cozyterm" target="_blank">GitHub</a> &bull;
+      <a href="https://github.com/engindearing-projects/engie" target="_blank">GitHub</a> &bull;
       MIT License
     </p>
-    <p class="legal">Forge&trade; is a trademark of engindearing projects. OpenCode is built by <a href="https://opencode.ai" target="_blank">anomalyco</a>.</p>
-    <p class="back-link"><a href="https://engindearing.soy">&larr; engindearing.soy</a></p>
+    <p class="legal">Forge is a trademark of engindearing projects.</p>
+    <p class="back-link"><a href="https://quitgpt.ai">quitgpt.ai</a> &middot; <a href="https://engindearing.soy">&larr; engindearing.soy</a></p>
   </div>
 </footer>
 
@@ -1161,7 +1259,7 @@ function copyInstall(el, text) {
     termObserver.observe(terminalWin);
   }
 
-  var animated = document.querySelectorAll('.feature-card, .forge-step, .arch-interface');
+  var animated = document.querySelectorAll('.feature-card, .forge-step, .arch-interface, .migration-step');
   if (animated.length) {
     var cardObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
